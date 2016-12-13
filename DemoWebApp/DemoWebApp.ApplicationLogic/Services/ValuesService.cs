@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DemoWebApp.ApplicationLogic.Interfaces;
 
 namespace DemoWebApp.ApplicationLogic.Services
