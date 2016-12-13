@@ -1,25 +1,27 @@
-﻿using System;
+﻿using DemoWebApp.ApplicationLogic.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace DemoWebApp.Controllers
 {
-    [Authorize]
     public class ValuesController : ApiController
     {
+        private readonly IValues _iValues;
+
+        public ValuesController(IValues iValues)
+        {
+            _iValues = iValues;
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _iValues.Get();
         }
 
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            return _iValues.Get(id);
         }
 
         // POST api/values
