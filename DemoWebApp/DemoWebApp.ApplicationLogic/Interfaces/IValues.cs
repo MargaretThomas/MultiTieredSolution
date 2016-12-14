@@ -5,7 +5,7 @@ namespace DemoWebApp.ApplicationLogic.Interfaces
 {
     public interface IValues
     {
-        IEnumerable<string> Get();
+        IEnumerable<int> Get();
         int? Get(Guid id);
         string AddValue(int id);
     }

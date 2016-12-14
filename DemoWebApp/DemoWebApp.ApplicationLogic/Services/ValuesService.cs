@@ -3,6 +3,7 @@ using DemoWebApp.ApplicationLogic.Interfaces;
 using Nest;
 using System;
 using DemoWebApp.Data.Models;
+using System.Linq;
 
 namespace DemoWebApp.ApplicationLogic.Services
 {
@@ -15,9 +16,12 @@ namespace DemoWebApp.ApplicationLogic.Services
             _elasticClient = elasticClient;
         }
 
-        public IEnumerable<string> Get()
+        public IEnumerable<int> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _elasticClient.Search<ValuesModel>(s => s.Query(q => q
+                .MatchAll()))
+                .Hits
+                .Select(h => h.Source.Value);
         }
 
         public int? Get(Guid id)

@@ -14,7 +14,7 @@ namespace DemoWebApp.Controllers
             _iValues = iValues;
         }
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<int> Get()
         {
             return _iValues.Get();
         }
