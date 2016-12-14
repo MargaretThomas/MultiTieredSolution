@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DemoWebApp.ApplicationLogic.Interfaces
 {
     public interface IValues
     {
         IEnumerable<string> Get();
-        string Get(int id);
+        int? Get(Guid id);
         string AddValue(int id);
     }
 }

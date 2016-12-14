@@ -1,4 +1,5 @@
 ﻿using DemoWebApp.ApplicationLogic.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -19,7 +20,7 @@ namespace DemoWebApp.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public int? Get(Guid id)
         {
             return _iValues.Get(id);
         }

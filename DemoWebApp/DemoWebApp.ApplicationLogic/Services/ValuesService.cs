@@ -20,9 +20,10 @@ namespace DemoWebApp.ApplicationLogic.Services
             return new string[] { "value1", "value2" };
         }
 
-        public string Get(int id)
+        public int? Get(Guid id)
         {
-            return "value";
+            var response = _elasticClient.Get<ValuesModel>(id);
+            return response.Source?.Value;
         }
         public string AddValue(int value)
         {
