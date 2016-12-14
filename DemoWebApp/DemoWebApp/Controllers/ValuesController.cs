@@ -25,8 +25,9 @@ namespace DemoWebApp.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public string Post([FromBody]int value)
         {
+            return _iValues.AddValue(value);
         }
 
         // PUT api/values/5
